@@ -249,12 +249,16 @@ persistence:
     storageClassName: ""
     # Bind an existing PVC. The other values (size, storageClassName, annotations) are then ignored.
     existingClaim: ""
+    # Specify PVC accessModes. Leave empty to default to "ReadWriteOnce".
+    accessModes: "ReadWriteOnce"
     annotations: {}
   uploads:
     size: 1Gi
     storageClassName: ""
     # Specify an existing PVC to bind. The other values are then ignored.
     existingClaim: ""
+    # Specify PVC accessModes. Leave empty to default to "ReadWriteOnce".
+    accessModes: "ReadWriteOnce"
     annotations: {}
 
 # Readiness and liveness probes. Overrides are merged over these defaults, so a key you
