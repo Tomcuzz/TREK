@@ -11,7 +11,7 @@ metadata:
   {{- end }}
 spec:
   accessModes:
-    - ReadWriteOnce
+    - {{ .Values.persistence.data.accessModes | default "ReadWriteOnce" }}
   {{- with .Values.persistence.data.storageClassName }}
   storageClassName: {{ . | quote }}
   {{- end }}
@@ -33,7 +33,7 @@ metadata:
   {{- end }}
 spec:
   accessModes:
-    - ReadWriteOnce
+    - {{ .Values.persistence.uploads.accessModes | default "ReadWriteOnce" }}
   {{- with .Values.persistence.uploads.storageClassName }}
   storageClassName: {{ . | quote }}
   {{- end }}
